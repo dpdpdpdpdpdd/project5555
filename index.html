@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>윷놀이 게임</title>
+  <style>
+    .board {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .dice {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="board">
+    <h1>윷놀이 게임</h1>
+    <button onclick="throwYut()">윷 던지기</button>
+    <p id="result"></p>
+    <div class="dice">
+      <img id="dice1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Yut_stick_1.svg/1024px-Yut_stick_1.svg.png" alt="yut" width="50">
+      <img id="dice2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Yut_stick_1.svg/1024px-Yut_stick_1.svg.png" alt="yut" width="50">
+      <img id="dice3" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Yut_stick_1.svg/1024px-Yut_stick_1.svg.png" alt="yut" width="50">
+      <img id="dice4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Yut_stick_1.svg/1024px-Yut_stick_1.svg.png" alt="yut" width="50">
+    </div>
+  </div>
+
+  <script>
+    function throwYut() {
+      const yut = ['도', '개', '걸', '윷', '모'];
+      const results = [];
+      
+      for (let i = 0; i < 4; i++) {
+        const randomNum = Math.floor(Math.random() * 5); // 0부터 4까지의 난수 생성
+        results.push(yut[randomNum]);
+        document.getElementById(`dice${i + 1}`).src = `https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Yut_stick_${randomNum + 1}.svg/1024px-Yut_stick_${randomNum + 1}.svg.png`;
+      }
+
+      const resultText = results.join(' ');
+      document.getElementById('result').innerText = `나온 윷: ${resultText}`;
+    }
+  </script>
+</body>
+</html>
+<svg width="100" height="100">
+    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="white" />
+    <circle cx="50" cy="30" r="10" fill="black" />
+    <circle cx="50" cy="70" r="10" fill="black" />
+    <circle cx="30" cy="50" r="10" fill="black" />
+    <circle cx="70" cy="50" r="10" fill="black" />
+  </svg>
+  <svg width="100" height="100">
+    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="white" />
+    <circle cx="50" cy="30" r="10" fill="black" />
+    <circle cx="50" cy="70" r="10" fill="black" />
+    <circle cx="30" cy="50" r="10" fill="black" />
+  </svg>
+  <svg width="100" height="100">
+    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="white" />
+    <circle cx="50" cy="30" r="10" fill="black" />
+    <circle cx="50" cy="70" r="10" fill="black" />
+  </svg>
+  <svg width="100" height="100">
+    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="white" />
+    <circle cx="50" cy="30" r="10" fill="black" />
+  </svg>
+  <svg width="100" height="100">
+    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="white" />
+  </svg>
+        
